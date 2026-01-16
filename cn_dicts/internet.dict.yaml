@@ -1,0 +1,16 @@
+# Rime dictionary
+# encoding: utf-8
+# ------- 网络补充词库 -------
+# 与 其他词库 没有重复
+# 通过朴素的脚本和勤劳的双手完成了注音
+# - 日常更新的一些网络流行缩写
+---
+name: internet
+version: "1.0.0"
+sort: by_weight
+...
+# +_+
+啊这 a z 1000
+插眼 c y 1000
+卧槽 w c 1000
+难绷 nan beng 1000
