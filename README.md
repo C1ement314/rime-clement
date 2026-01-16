@@ -1,6 +1,15 @@
 # 七平拼音
 
-## 喜欢请给个star或者fork，感谢啦~
+<p align="center">
+    <a href="https://github.com/liang14658fox/liang14658fox"><img src="https://img.shields.io/badge/status-updating-brightgreen.svg"></a>
+    <a href="https://github.com/python/cpython"><img src="https://img.shields.io/badge/Python-3.12-FF1493.svg"></a>
+    <a href="https://github.com/liang14658fox/liang14658fox/graphs/contributors"><img src="https://img.shields.io/github/contributors/liang14658fox/liang14658fox?color=blue"></a>
+    <a href="https://github.com/liang14658fox/liang14658fox/stargazers"><img src="https://img.shields.io/github/stars/liang14658fox/liang14658fox.svg?logo=github"></a>
+    <a href="https://github.com/liang14658fox/liang14658fox/network/members"><img src="https://img.shields.io/github/forks/liang14658fox/liang14658fox.svg?color=blue&logo=github"></a>
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=liang14658fox.liang14658fox" alt="visitors"/>   
+</p>
+
+## 喜欢请给个star⭐，感谢啦~
 
 原始配置和词库由[白霜拼音](https://github.com/gaboolic/rime-frost)与[日语词库](https://github.com/gkovacs/rime-japanese)修改而来。
 
@@ -111,3 +120,7 @@
 萌娘百科词库 <https://github.com/outloudvi/mw2fcitx> 萌娘百科词库，拥有大部分二次元词条。
 
 Rime <https://github.com/rime> 没有Rime，就没有现在的词库制作。
+
+### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=gaboolic/rime-frost&type=Date)](https://star-history.com/#gaboolic/rime-frost&Date)
