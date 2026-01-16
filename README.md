@@ -2,7 +2,7 @@
 
 ## 本词库仍未制作完成，目前仅全拼与自然码处于可供使用。
 
-原始配置和词库由[白霜拼音](https://github.com/gaboolic/rime-frost)修改而来。
+原始配置和词库由[白霜拼音](https://github.com/gaboolic/rime-frost)与[日语词库](https://github.com/gkovacs/rime-japanese)修改而来。
 
 白霜拼音的词库比起雾凇拼音和原版来说已经非常全面了，适合作为一款rime的起点，不过想要更加个性化与达到开箱即用，我就对白霜拼音进行了一定的修改。
 
@@ -116,5 +116,6 @@
 ### 鸣谢
 
 白霜词库 <https://github.com/gaboolic/rime-frost> 七平词库的初始词库、绝大部分配置来自白霜词库。
+日语词库 <https://github.com/gkovacs/rime-japanese> 优良日语词库，足够用户进行基础的日语输入。
 
 Rime <https://github.com/rime> 没有Rime，就没有现在的词库制作。
