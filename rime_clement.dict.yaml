@@ -8,12 +8,12 @@ sort: by_weight
 import_tables:
   - cn_dicts/8105     # 字表
   - cn_dicts/41448  # 大字表（按需启用）
+  - cn_dicts/internet # 网络补充词库
+  - cn_dicts/moegirl  # 萌娘百科词库
   - cn_dicts/base     # 基础词库
   - cn_dicts/ext      # 扩展词库
   - cn_dicts/others   # 一些杂项
-  - cn_dicts/moegirl  # 萌娘百科词库
   - cn_dicts/tencent           # 腾讯词库
-  - cn_dicts/internet             # 网络补充词库
   # 细胞词库
   - cn_dicts_cell/medication
   - cn_dicts_cell/industry_product
