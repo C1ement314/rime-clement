@@ -1,7 +1,7 @@
 # Rime schema
 # encoding: utf-8
 
-# 复制自 rime_frost.schema.yaml ，适配了双拼。
+# 复制自 rime_clement.schema.yaml ，适配了双拼。
 # 双拼键位映射复制自 https://github.com/rime/rime-double-pinyin
 # 双拼之间主要就是 speller/algebra 和 translator/preedit_format 这里有区别。
 #
@@ -15,13 +15,13 @@
 
 # 方案说明
 schema:
-  schema_id: rime_frost_double_pinyin_abc
-  name: 智能 ABC 双拼
+  schema_id: clement_double_pinyin_flypy
+  name: 小鹤双拼
   version: "1"
   author:
     - Dvel
   description: |
-    雾凇拼音 - 智能 ABC 双拼
+    雾凇拼音 - 小鹤双拼
     https://github.com/iDvel/rime-ice
   dependencies:
     - melt_eng        # 英文输入，作为次翻译器挂载到拼音方案
@@ -79,8 +79,8 @@ engine:
     - table_translator@radical_lookup   # 部件拆字反查
     - lua_translator@*unicode            # Unicode
     - lua_translator@*number_translator  # 数字、金额大写
-    - lua_translator@*force_gc           # 暴力 GC
     - lua_translator@*calculator    # 计算器
+    - lua_translator@*force_gc           # 暴力 GC
   filters:
     - lua_filter@*is_in_user_dict # 用户词典的词加上一个*
     - lua_filter@*corrector                          # 错音错字提示
@@ -158,8 +158,8 @@ pin_cand_filter:
 
 # 主翻译器，拼音
 translator:
-  dictionary: rime_frost          # 挂载词库 rime_frost.dict.yaml
-  prism: rime_frost_double_pinyin_abc      # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
+  dictionary: rime_clement          # 挂载词库 rime_clement.dict.yaml
+  prism: clement_double_pinyin_flypy    # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
   spelling_hints: 8             # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
   always_show_comments: true    # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
   initial_quality: 1.2          # 拼音的权重应该比英文大
@@ -167,41 +167,38 @@ translator:
     - xform/^/［/
     - xform/$/］/
   preedit_format:               # preedit_format 影响到输入框的显示和“Shift+回车”上屏的字符
-    - xform/o(\w)/0$1/
-    - xform/(\w)q/$1ei/
-    - xform/(\w)n/$1un/
+    - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
-    - xform/(\w)w/$1ian/
-    - xform/([dtnljqx])r/$1iu/
-    - xform/0r/0er/
-    - xform/([nljqxb])t/$1iang/
-    - xform/(\w)t/$1uang/
-    - xform/(\w)y/$1ing/
-    - xform/([dtnlgkhaevrzcs])o/$1uo/
-    - xform/(\w)p/$1uan/
+    - xform/(\w)q/$1iu/
+    - xform/(\w)w/$1ei/
+    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
+    - xform/(\w)t/$1ve/
+    - xform/(\w)y/$1un/
+    - xform/([dtnlgkhvuirzcs])o/$1uo/
+    - xform/(\w)p/$1ie/
     - xform/([jqx])s/$1iong/
     - xform/(\w)s/$1ong/
-    - xform/([gkhaevrzcs])d/$1ua/
-    - xform/(\w)d/$1ia/
+    - xform/(\w)d/$1ai/
     - xform/(\w)f/$1en/
     - xform/(\w)h/$1ang/
     - xform/(\w)j/$1an/
-    - xform/(\w)k/$1ao/
-    - xform/(\w)l/$1ai/
-    - xform/(\w)z/$1iao/
-    - xform/(\w)x/$1ie/
-    - xform/([gkhaev])c/$1uai/
-    - xform/(\w)c/$1in/
-    - xform/(\w)b/$1ou/
-    - xform/([nl])m/$1ve/
-    - xform/([jqxy])m/$1ue/
-    - xform/(\w)m/$1ui/
-    - "xform/(^|[ '])a/$1zh/"
-    - "xform/(^|[ '])e/$1ch/"
-    - "xform/(^|[ '])v/$1sh/"
-    - xform/0(\w)/$1/
-    - xform/([nl])v/$1ü/
+    - xform/([gkhvuirzcs])k/$1uai/
+    - xform/(\w)k/$1ing/
+    - xform/([jqxnlb])l/$1iang/
+    - xform/(\w)l/$1uang/
+    - xform/(\w)z/$1ou/
+    - xform/([gkhvuirzcs])x/$1ua/
+    - xform/(\w)x/$1ia/
+    - xform/(\w)c/$1ao/
+    - xform/([dtgkhvuirzcs])v/$1ui/
+    - xform/(\w)b/$1in/
+    - xform/(\w)m/$1ian/
+    - xform/([aoe])\1(\w)/$1$2/
+    - "xform/(^|[ '])v/$1zh/"
+    - "xform/(^|[ '])i/$1ch/"
+    - "xform/(^|[ '])u/$1sh/"
     - xform/([jqxy])v/$1u/
+    - xform/([nl])v/$1ü/
     - xform/ü/v/  # ü 显示为 v
 
 
@@ -218,7 +215,7 @@ melt_eng:
 # 中英混合词汇
 cn_en:
   dictionary: ""
-  user_dict: en_dicts/cn_en_abc
+  user_dict: en_dicts/cn_en_flypy
   db_class: stabledb
   enable_completion: true
   enable_sentence: false
@@ -280,7 +277,7 @@ radical_reverse_lookup:
   tags: [ radical_lookup ]
   # dictionary 为拼音标注来源。目前是显示本方案词库的注音，可去部件拆字方案下载更全的、带声调的、已编译好的词典
   # https://github.com/mirtlecn/rime-radical-pinyin?tab=readme-ov-file#%E5%8F%8D%E6%9F%A5%E5%B8%A6%E5%A3%B0%E8%B0%83%E6%B3%A8%E9%9F%B3
-  dictionary: rime_frost
+  dictionary: rime_clement
   # comment_format:     # 自定义 comment，例如在左右加上括号
   #  - xform/^/(/
   #  - xform/$/)/
@@ -314,30 +311,33 @@ speller:
   delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
   algebra:
     - erase/^xx$/
-    - xform/^zh/Ⓐ/
-    - xform/^ch/Ⓔ/
-    - xform/^sh/Ⓥ/
-    - xform/^([aoe].*)$/Ⓞ$1/
-    - xform/ei$/Ⓠ/
-    - xform/ian$/Ⓦ/
-    - xform/er$|iu$/Ⓡ/
-    - xform/[iu]ang$/Ⓣ/
-    - xform/ing$/Ⓨ/
+    - derive/^([jqxy])u$/$1v/
+    - derive/^([aoe])([ioun])$/$1$1$2/
+    - xform/^([aoe])(ng)?$/$1$1$2/
+    - xform/iu$/Ⓠ/
+    - xform/(.)ei$/$1Ⓦ/
+    - xform/uan$/Ⓡ/
+    - xform/[uv]e$/Ⓣ/
+    - xform/un$/Ⓨ/
+    - xform/^sh/Ⓤ/
+    - xform/^ch/Ⓘ/
+    - xform/^zh/Ⓥ/
     - xform/uo$/Ⓞ/
-    - xform/uan$/Ⓟ/
+    - xform/ie$/Ⓟ/
     - xform/(.)i?ong$/$1Ⓢ/
-    - xform/[iu]a$/Ⓓ/
-    - xform/en$/Ⓕ/
-    - xform/eng$/Ⓖ/
-    - xform/ang$/Ⓗ/
-    - xform/an$/Ⓙ/
-    - xform/iao$/Ⓩ/
-    - xform/ao$/Ⓚ/
-    - xform/in$|uai$/Ⓒ/
-    - xform/ai$/Ⓛ/
-    - xform/ie$/Ⓧ/
-    - xform/ou$/Ⓑ/
-    - xform/un$/Ⓝ/
-    - xform/[uv]e$|ui$/Ⓜ/
-    - xlit/ⓆⓌⒺⓇⓉⓎⓄⓅⒶⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwertyopasdfghjklzxcvbnm/
+    - xform/ing$|uai$/Ⓚ/
+    - xform/(.)ai$/$1Ⓓ/
+    - xform/(.)en$/$1Ⓕ/
+    - xform/(.)eng$/$1Ⓖ/
+    - xform/[iu]ang$/Ⓛ/
+    - xform/(.)ang$/$1Ⓗ/
+    - xform/ian$/Ⓜ/
+    - xform/(.)an$/$1Ⓙ/
+    - xform/(.)ou$/$1Ⓩ/
+    - xform/[iu]a$/Ⓧ/
+    - xform/iao$/Ⓝ/
+    - xform/(.)ao$/$1Ⓒ/
+    - xform/ui$/Ⓥ/
+    - xform/in$/Ⓑ/
+    - xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwrtyuiopsdfghjklzxcvbnm/
     # - abbrev/^(.).+$/$1/  # 首字母简拼，开启后会导致 3 个字母时 kj'x 变成 k'jx 的问题

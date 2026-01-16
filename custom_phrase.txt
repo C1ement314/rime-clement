@@ -61,3 +61,8 @@ gone	gone
 Go程	gocheng
 code	code
 SOHO	soho
+
+插眼	cy
+啊这	az
+卧槽	wc
+ccb领域大神	ccb
