@@ -100,7 +100,9 @@
 ### 鸣谢
 
 白霜词库 <https://github.com/gaboolic/rime-frost> 七平词库的初始词库、绝大部分配置来自白霜词库。
+
 日语词库 <https://github.com/gkovacs/rime-japanese> 优良日语词库，足够用户进行基础的日语输入。
+
 萌娘百科词库 <https://github.com/outloudvi/mw2fcitx> 萌娘百科词库，拥有大部分二次元词条。
 
 Rime <https://github.com/rime> 没有Rime，就没有现在的词库制作。
