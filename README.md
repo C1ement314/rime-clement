@@ -1,6 +1,6 @@
 # 七平拼音
 
-## 喜欢请给个star或者folk，感谢啦~
+## 喜欢请给个star或者fork，感谢啦~
 
 原始配置和词库由[白霜拼音](https://github.com/gaboolic/rime-frost)与[日语词库](https://github.com/gkovacs/rime-japanese)修改而来。
 
