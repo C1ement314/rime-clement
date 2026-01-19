@@ -123,4 +123,4 @@ Rime <https://github.com/rime> 没有Rime，就没有现在的词库制作。
 
 ### Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=gaboolic/rime-frost&type=Date)](https://star-history.com/#gaboolic/rime-frost&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=C1ement314/rime-clement&type=Date)](https://star-history.com/#C1ement314/rime-clement&Date)
